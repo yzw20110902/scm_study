@@ -33,12 +33,13 @@
 				name="supPay" />
 		</div>
 				<div class="myfitem">
-			<label for="supType">供应商类型：</label> 									
-				<select id="cc" class="easyui-combobox" name="supType" style="width:200px;">   
+			<label for="supType">供应商类型：</label> 		
+			<input type="text" name="supType" />							
+				<%-- <select id="cc" class="easyui-combobox" name="supType" style="width:200px;">   
 					<c:forEach items="${applicationScope.sysParam.supType}" var="supType">
 					    <option value="${supType.key}">${supType.value}</option>   
 					</c:forEach>   
-				</select>  
+				</select>   --%>
 		</div>
 		<div class="myfitem">
 			<label for="supRemark">备注:</label>
@@ -81,6 +82,7 @@
 						},
 						success : function(count) {							
 								//可以定义为对应消息框
+								alert(JSON.stringify(count))
 								if(count>0){
 									alert("添加成功！");									
 								}else{
